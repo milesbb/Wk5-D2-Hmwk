@@ -44,50 +44,64 @@
         }
       }
 
+      /* start of excercises */
+
+      /* 1 */
       h1 {
         color: aqua;
       }
 
+      /* 2 */
       nav * {
         color: green;
       }
 
+      /* 3 */
       .jumbotron div:last-child a {
         color: pink;
       }
 
+      /* 4 */
       .blog-post:first-of-type {
         background-color: seashell;
       }
 
+      /* 5 */
       .blog-post:first-of-type hr:first-of-type {
         background-color: red;
       }
 
+      /* 6 */
       nav:first-of-type span:nth-child(even) {
         color: blueviolet;
       }
 
+      /* 7 */
       aside div:nth-child(2) ol * {
         color: brown;
       }
 
+      /* 8 */
       .blog-post:nth-child(3) p:first-of-type a {
         color: aqua;
       }
 
+      /* 9 */
       .blog-post:nth-child(4) ul li:nth-child(2) {
         color: greenyellow;
       }
 
+      /* 10 */
       body > a:last-of-type {
         color: orange;
       }
 
+      /* 11 */
       .blog-pagination a:last-child {
         color: royalblue;
       }
 
+      /* 12 */
       footer p a:last-child {
         color: brown;
       }
@@ -458,38 +472,40 @@
     <a href="#" class="float-right mb-3 mr-3">Back to top</a>
     <script>
       /* JS Exercises should go here */
-      // Write a JavaScript functionality to add a new link into the navbar
+      // 13 Write a JavaScript functionality to add a new link into the navbar
 
       const NAVBAR = document.getElementsByTagName("nav")[0];
       const NEW_LINK = document.createElement("span");
       NEW_LINK.innerText = "Food";
       NAVBAR.appendChild(NEW_LINK);
 
-      // Write a JavaScript functionality to change the color of the main heading title
+      // 14 Write a JavaScript functionality to change the color of the main heading title
 
       const MAIN_HEAD = document.getElementsByTagName("h1")[0];
       MAIN_HEAD.style.color = "gold";
 
-      // Write a JavaScript functionality to change the background of the jumbotron
+      // 15 Write a JavaScript functionality to change the background of the jumbotron
 
       const JUMBOTRON = document.getElementsByClassName("jumbotron")[0];
       JUMBOTRON.style.backgroundColor = "blue";
 
-      // Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically
+      // 16 Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically
 
       const TWITTER = document.querySelectorAll(
         "aside > div:nth-child(3) > ol > li:nth-child(2) > a"
       )[0];
       TWITTER.remove();
 
-      // Write a JavaScript functionality to remove the first 50 characters in the first paragraph for every blog post
+      // 17 Write a JavaScript functionality to remove the first 50 characters in the first paragraph for every blog post
 
-      const FIRST_PARAGRAPHS = document.querySelectorAll(".blog-main > div > p:nth-child(3)");
+      const FIRST_PARAGRAPHS = document.querySelectorAll(
+        ".blog-main > div > p:nth-child(3)"
+      );
       for (let i = 0; i < FIRST_PARAGRAPHS.length; i++) {
         FIRST_PARAGRAPHS[i].innerText = FIRST_PARAGRAPHS[i].innerText.slice(50);
       }
 
-      // Write a JavaScript functionality to add a new Blog Post (div with title and text)
+      // 18 Write a JavaScript functionality to add a new Blog Post (div with title and text)
 
       const PARAGRAPH_CONTAINER = document.querySelectorAll(".blog-main")[0];
       const NEW_PARA = document.createElement("div");
@@ -498,45 +514,46 @@
 
       const NEW_PARA_TITLE = document.createElement("h2");
       NEW_PARA_TITLE.classList.add("blog-post-title");
-      NEW_PARA_TITLE.innerText = "Yet another blog post"
+      NEW_PARA_TITLE.innerText = "Yet another blog post";
       NEW_PARA.appendChild(NEW_PARA_TITLE);
 
       const NEW_PARA_META = document.createElement("p");
       NEW_PARA_META.classList.add("blog-post-meta");
-      NEW_PARA_META.innerText = "January 13, 2014 by "
+      NEW_PARA_META.innerText = "January 13, 2014 by ";
       NEW_PARA.appendChild(NEW_PARA_META);
 
       const NEW_PARA_AUTHOR = document.createElement("a");
-      NEW_PARA_AUTHOR.href = "#"
-      NEW_PARA_AUTHOR.innerText = "Miles"
+      NEW_PARA_AUTHOR.href = "#";
+      NEW_PARA_AUTHOR.innerText = "Miles";
       NEW_PARA_META.appendChild(NEW_PARA_AUTHOR);
 
       const NEW_PARA_CONTENT = document.createElement("p");
-      NEW_PARA_CONTENT.innerText = "TEXT TEXT TEXT"
+      NEW_PARA_CONTENT.innerText = "TEXT TEXT TEXT";
       NEW_PARA.appendChild(NEW_PARA_CONTENT);
 
       const NAV_BUTTONS = document.querySelectorAll(".blog-pagination")[0];
       NAV_BUTTONS.remove();
-      PARAGRAPH_CONTAINER.appendChild(NAV_BUTTONS)
+      PARAGRAPH_CONTAINER.appendChild(NAV_BUTTONS);
 
-      // Write a JavaScript functionality to remove the last Blog Post when the user clicks on the "Older" button
+      // 19 Write a JavaScript functionality to remove the last Blog Post when the user clicks on the "Older" button
 
-      const OLDER_BUTTON = document.querySelectorAll(".blog-pagination > a:first-of-type")[0];
-      function removeLastPost () {
+      const OLDER_BUTTON = document.querySelectorAll(
+        ".blog-pagination > a:first-of-type"
+      )[0];
+      function removeLastPost() {
         NEW_PARA.remove();
       }
       OLDER_BUTTON.addEventListener("click", removeLastPost);
 
-      // Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers the mouse on an author's name
+      // 20 Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers the mouse on an author's name
 
-      const AUTH_NAME = document.querySelectorAll(".blog-post-meta a");
-      function nameAlert (event) {
-        alert(event.target.innerText);
-      }
-      for (let i = 0; i < AUTH_NAME.length; i++) {
-        AUTH_NAME[i].addEventListener("mouseover", nameAlert(event));
-      }
-      
+    //   const AUTH_NAME = document.querySelectorAll(".blog-post-meta > a");
+    //   function nameAlert(event) {
+    //     alert(event.target.innerText);
+    //   }
+    //   for (let i = 0; i < AUTH_NAME.length; i++) {
+    //     AUTH_NAME[i].addEventListener("mouseover", nameAlert(event));
+    //   }
 
       // EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link
     </script>
